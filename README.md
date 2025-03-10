@@ -16,6 +16,9 @@ pip install -r requirements.txt
 ```
 
 ## 🚀 Uso
+
+Puedes probar tu código, generar el audio y descargarlo usando **Google Colab**.
+
 Ejemplo de uso con Python:
 ```python
 from kokoro import TTS
@@ -33,5 +36,9 @@ model.synthesize("Hola, bienvenido a Text-to-Speech con Kokoro!")
 
 ## 📝 Licencia
 Este proyecto se encuentra bajo la licencia **MIT**.
+
+---
+✉️ *Desarrollado con ❤️ por [tu nombre o usuario]*
+
 
 
