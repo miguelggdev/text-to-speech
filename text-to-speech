@@ -1,0 +1,17 @@
+from kokoro import KPipeline
+from IPython.display import display, Audio
+import soundfile as sf
+pipeline = KPipeline(lang_code='a')
+text = '''
+Innovative AI Solutions, At Arkana Tech, we specialize in designing modern web experiences that empower businesses through advanced chatbot development and seamless process automation.
+'''
+generator = pipeline(
+    text, voice='af_heart', # <= change voice here
+    speed=1, split_pattern=r'\n+'
+)
+for i, (gs, ps, audio) in enumerate(generator):
+    print(i)  # i => index
+    print(gs) # gs => graphemes/text
+    print(ps) # ps => phonemes
+    display(Audio(data=audio, rate=24000, autoplay=i==0))
+    sf.write(f'{i}.mp3', audio, 24000) 
